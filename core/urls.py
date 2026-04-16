@@ -17,7 +17,8 @@ Including another URLconf
 from django.contrib import admin
 from django.urls import path, include
 from rest_framework.routers import DefaultRouter
-from blog.views import ArticleListCreate, ArticleDetail
+from rest_framework_simplejwt.views import TokenObtainPairView, TokenRefreshView
+from blog.views import ArticleListCreate, ArticleDetail, RegisterView
 
 # router = DefaultRouter()
 # router.register(r'articles', ArticleViewSet) 
@@ -27,4 +28,7 @@ urlpatterns = [
     # path('api/', include(router.urls)),
     path('api/articles/', ArticleListCreate.as_view(), name='article-list'),
     path('api/articles/<int:pk>/', ArticleDetail.as_view(), name='article-detail'),
+    path('api/auth/register/', RegisterView.as_view(), name='auth_register'),
+    path('api/auth/login/', TokenObtainPairView.as_view(), name='token_obtain_pair'),
+    path('api/auth/refresh/', TokenRefreshView.as_view(), name='token_refresh'),
 ]

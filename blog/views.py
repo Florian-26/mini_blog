@@ -1,10 +1,20 @@
-from rest_framework import viewsets
+from rest_framework import viewsets, generics, permissions
 from rest_framework.views import APIView
 from rest_framework.response import Response
 from rest_framework import status
 from django.shortcuts import get_object_or_404
+from django.contrib.auth import get_user_model
 from .models import Article
-from .serializers import ArticleSerializer
+from .serializers import ArticleSerializer, UserSerializer
+
+User = get_user_model()
+
+class RegisterView(generics.CreateAPIView):
+    serializer_class = UserSerializer
+    permission_classes = (permissions.AllowAny,)
+
+    def get_queryset(self):
+        return User.objects.all()
 
 # class ArticleViewSet(viewsets.ModelViewSet):
 #     queryset = Article.objects.all().order_by('-date_creation')
