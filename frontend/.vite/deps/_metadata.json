@@ -2,7 +2,43 @@
   "hash": "6bfab8b3",
   "configHash": "026a1ef5",
   "lockfileHash": "549495f4",
-  "browserHash": "5ad26a37",
-  "optimized": {},
-  "chunks": {}
+  "browserHash": "23395779",
+  "optimized": {
+    "axios": {
+      "src": "../../node_modules/axios/index.js",
+      "file": "axios.js",
+      "fileHash": "a8be2708",
+      "needsInterop": false
+    },
+    "lucide-react": {
+      "src": "../../node_modules/lucide-react/dist/esm/lucide-react.js",
+      "file": "lucide-react.js",
+      "fileHash": "dd24d386",
+      "needsInterop": false
+    },
+    "react-dom/client": {
+      "src": "../../node_modules/react-dom/client.js",
+      "file": "react-dom_client.js",
+      "fileHash": "fa81fb4f",
+      "needsInterop": true
+    },
+    "react": {
+      "src": "../../node_modules/react/index.js",
+      "file": "react.js",
+      "fileHash": "66dd999f",
+      "needsInterop": true
+    },
+    "react/jsx-dev-runtime": {
+      "src": "../../node_modules/react/jsx-dev-runtime.js",
+      "file": "react_jsx-dev-runtime.js",
+      "fileHash": "ecb11a4b",
+      "needsInterop": true
+    }
+  },
+  "chunks": {
+    "chunk-DOseaPKx": {
+      "file": "chunk-DOseaPKx.js",
+      "isDynamicEntry": false
+    }
+  }
 }
